@@ -1,0 +1,121 @@
+{% extends 'ai/layouts/main.html' %}
+{% block title %}
+  status
+
+{% endblock title %} 
+ 
+{% block content %}
+<style>
+    /* CSS styling for the card design */
+    
+    .card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin-bottom: 20px;
+        margin-top: 10%;
+    }
+    .card-header {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+    }
+    .card-body {
+        padding: 20px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+    tr:hover {
+        background-color: #f2f2f2;
+    }
+</style>
+</head>
+<body>
+<div class="card">
+    <div class="card-header">
+        <h1>Complaint Status Page</h1>
+    </div>
+    <div class="card-body">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Complaint Type</th>
+                    <th>Subject</th>
+                    <th>Description</th>
+                    <th>Created At</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for complaint in complaints %}
+                <tr>
+                    <td>{{ complaint.name }}</td>
+                    <td>{{ complaint.complaint_type }}</td>
+                    <td>{{ complaint.subject }}</td>
+                    <td>{{ complaint.description }}</td>
+                    <td>{{ complaint.created_at }}</td>
+                    <td>{{ complaint.status }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<style>
+    /* CSS styling for the card design */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #77f797;
+        padding: 20px;
+    }
+    .card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+    .card-header {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+    }
+    .card-body {
+        padding: 20px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+    tr:hover {
+        background-color: #f2f2f2;
+    }
+</style>
+</head>
+
+
+
+
+{% endblock content %}
